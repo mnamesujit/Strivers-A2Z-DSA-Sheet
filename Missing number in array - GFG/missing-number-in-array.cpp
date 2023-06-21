@@ -21,7 +21,7 @@ class Solution{
         // Finding sum of element that presented in Array
         int sum = 0;
         
-        // Running 
+        // Running loop from 0 to n-1 because 1 element is missing and current array size is N-1
         for(int i=0; i<n-1; i++){
             sum += array[i];
         }
