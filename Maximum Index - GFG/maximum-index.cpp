@@ -26,21 +26,21 @@ public:
         
         // O(n) -> Second Approach
         int max_index=0;
-        vector<int> a(n),b(n);
-        a[0]=arr[0];
+        vector<int> lmin(n),rmax(n);
+        lmin[0]=arr[0];
         for(int i=1;i<n;i++)
         {
-            a[i] = min(a[i-1],arr[i]);
+            lmin[i] = min(lmin[i-1],arr[i]);
         }
-        b[n-1]=arr[n-1];
+        rmax[n-1]=arr[n-1];
         for(int i=n-2;i>=0;i--)
         {
-            b[i] = max(b[i+1],arr[i]);
+            rmax[i] = max(rmax[i+1],arr[i]);
         }
         int i=0,j=0;
         while(i<n && j<n)
         {
-            if(a[i]<=b[j])
+            if(lmin[i]<=rmax[j])
             {
                 max_index = max(max_index,j-i);
                 j++;
