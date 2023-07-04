@@ -14,7 +14,7 @@ class Solution{
         int end = 0;
         int count = 0;
         long long product = 1;
-        //right and left are the pointers to start and end of window
+
         for(end = 0; end < n; end++)
         {
             product = product * a[end];
